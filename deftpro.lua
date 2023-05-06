@@ -1,13 +1,3 @@
---[[ 
---  Trackball bindings for the Elecom Deft Pro so you don't need the drivers.
---
---  Features include:
---      1. Hold-to-ball-scroll based on the Logitech Marble Mouse Lua script
---      2. Scroll wheel tilt left/right to change virtual workspaces
---      3. One-button copy-paste
---      3. Doesn't modify built-in trackpad behavior 
---]]
-
 -- Mouse button event numbers, 0 is mouse left and 1 is mouse right
 local mouseMiddle = 2 -- Wheel click
 local mouseBack = 3 -- Thumb front
