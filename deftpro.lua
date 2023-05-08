@@ -1,3 +1,4 @@
+-- Scroll while holding mouse back button
 -- Mouse button event numbers, 0 is mouse left and 1 is mouse right
 local mouseMiddle = 2 -- Wheel click
 local mouseBack = 3 -- Thumb front
@@ -88,11 +89,18 @@ overrideOtherMouseUp = hs.eventtap.new({hs.eventtap.event.types.otherMouseUp}, f
     -- print("OtherMouseUp: ", pressedMouseButton)
     if (deferred) then
         setOverrides(e)
-        if (mouseBack == pressedMouseButton) then
-            -- no button remap
-            return true
-        end
     end
+
+    if (
+        pressedMouseButton == mouseBack or 
+        pressedMouseButton == mouse5 or
+        pressedMouseButton == mouse6 or
+        pressedMouseButton == mouse7
+    ) then
+        -- capture mouseUp so it doesn't trigger unwanted events
+        return true
+    end
+
     return false
 end)
 
